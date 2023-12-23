@@ -1,7 +1,7 @@
 <!-- TypingText.vue -->
 
 <template>
-  <div class="text-start">
+  <div class="typing-text-container">
     <p class="typing-text">{{ typedText }}<span class="cursor" :class="{ 'blink': cursorVisible }"></span></p>
   </div>
 </template>
@@ -15,20 +15,32 @@ export default {
     },
     typingSpeed: {
       type: Number,
-      default: 100, // Adjust the typing speed as needed
+      default: 70, // Adjust the typing speed as needed
+    },
+    deletingText: {
+      type: Boolean,
+      default: true,
+    },
+    deletingSpeed: {
+      type: Number,
+      default: 60, // Adjust the typing speed as needed
     },
     wordDelay: {
       type: Number,
-      default: 500, // Delay between words
+      default: 400, // Delay between words
     },
     deleteDelay: {
       type: Number,
-      default: 1000, // Delay before deleting the text
+      default: 500, // Delay before deleting the text
     },
     loopDelay: {
       type: Number,
       default: 1000, // Delay between loops
     },
+    startDelay: {
+      type: Number,
+      default: 500, // Delay before starting typing
+    }
   },
   data() {
     return {
@@ -39,7 +51,17 @@ export default {
     };
   },
   methods: {
+    isElementInView(el) {
+      const rect = el.getBoundingClientRect();
+      return (
+        rect.top >= 0 &&
+        rect.left >= 0 &&
+        rect.bottom <= (window.innerHeight || document.documentElement.clientHeight) &&
+        rect.right <= (window.innerWidth || document.documentElement.clientWidth)
+      );
+    },
     typeNextCharacter() {
+
       const currentText = this.texts[this.currentTextIndex];
 
       if (this.currentIndex < currentText.length) {
@@ -48,7 +70,7 @@ export default {
 
         // Set a delay before typing the next character
         setTimeout(this.typeNextCharacter, this.typingSpeed);
-      } else {
+      } else if (this.deletingText) {
         // Set a delay before deleting the text
         setTimeout(this.deleteText, this.deleteDelay);
       }
@@ -59,7 +81,7 @@ export default {
         this.currentIndex--;
 
         // Set a delay before deleting the next character
-        setTimeout(this.deleteText, this.typingSpeed);
+        setTimeout(this.deleteText, this.deletingSpeed);
       } else {
         // Move to the next text in the array
         this.currentTextIndex = (this.currentTextIndex + 1) % this.texts.length;
@@ -77,8 +99,12 @@ export default {
     },
   },
   mounted() {
-    // Start the typing loop when the component is mounted
-    this.typeNextCharacter();
+    // Set a delay before starting typing
+    setTimeout(
+      this.typeNextCharacter,  // Call the typing function 
+      this.startDelay);
+    
+
     // Start toggling the cursor visibility
     this.toggleCursor();
   },
@@ -87,7 +113,7 @@ export default {
 
 <style scoped>
 .typing-text-container {
-  text-align: start; /* Adjust the alignment as needed */
+  text-align: center; /* Adjust the alignment as needed */
 }
 
 .typing-text {

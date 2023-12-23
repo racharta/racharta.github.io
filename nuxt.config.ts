@@ -8,5 +8,5 @@ export default defineNuxtConfig({
   ],
   plugins: [
     { src: '~/plugins/aos.ts', mode: 'client' }
-  ]
+  ],
 })

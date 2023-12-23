@@ -6,14 +6,16 @@
         <div class="text-center">
             <h1 class="text-3xl text-center font-bold">Socials</h1>
             <div class="mt-3 flex gap-2 items-start text-xs">
-                <ULink to="https://www.linkedin.com/in/racharta/" class="flex gap-1 items-center">
+                <ULink to="https://www.linkedin.com/in/racharta/" target="_blank" class="flex gap-1 items-center">
                     <Icon name="mdi:linkedin" size="30"/>
-                    
                 </ULink>
-                <ULink to="mailto:innodigitalindonesia@gmail" class="flex gap-1 items-center">
+                <ULink to="https://aritaurisia.medium.com/" target="_blank" class="flex gap-1 items-center">
+                    <Icon name="mdi:medium" size="30"/>
+                </ULink>
+                <ULink to="mailto:innodigitalindonesia@gmail" target="_blank" class="flex gap-1 items-center">
                     <Icon name="mdi:gmail" size="30"/>
                 </ULink>
-                <ULink to="https://www.youtube.com/@innodigital5496" class="flex gap-1 items-center">
+                <ULink to="https://www.youtube.com/@innodigital5496" target="_blank" class="flex gap-1 items-center">
                     <Icon name="mdi:youtube" size="30"/>
                 </ULink>  
             </div>
