@@ -9,4 +9,8 @@ export default defineNuxtConfig({
   plugins: [
     { src: '~/plugins/aos.ts', mode: 'client' }
   ],
+  ui: {
+    primary: 'gray',
+    dark: true
+  }
 })

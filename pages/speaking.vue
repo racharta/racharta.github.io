@@ -33,7 +33,7 @@ function scrollToBottom() {
 </script>
 <template>
   <UContainer data-aos="fade-left" class="py-12">
-    <Typing :texts="['I Have been Speakers since 2020']" :deleting-text="false" class="text-xl lg:text-3xl" />
+    <Typing :texts="['My Speaking Journey']" :deleting-text="false" class="text-xl lg:text-3xl" />
   </UContainer>
   <UContainer>
     <UDivider label="2023" class="mt-6 text-lg lg:text-2xl" data-aos="fade-left"/>
