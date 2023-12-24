@@ -5,9 +5,16 @@ let hamburger = ref(null);
 const toggleMenu = () => {
     nav.value.classList.toggle('nav-active');
     hamburger.value.classList.toggle('hamburger-active');
-    console.log(nav.value, hamburger.value);
 }
 
+const route = useRoute();
+watch(
+    () => route.fullPath, 
+    () => {
+        nav.value.classList.remove('nav-active');
+        hamburger.value.classList.remove('hamburger-active');
+        console.log('route changed');
+});
 </script>
 <template>
     <UContainer class="py-6 flex justify-between items-center">
