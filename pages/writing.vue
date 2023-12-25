@@ -59,6 +59,10 @@ function scrollToBottom() {
         <WritingCard v-for="article in articles" :key="article.title" :article="article" data-aos="fade-up" data-aos-offset="10" class="py-0"/>
     </UContainer>
 
+    <UDivider label="2018 blogs" class="mt-12"/>
+    <UContainer>
+        
+    </UContainer>
     <!-- floating button -->
     <div class="fixed bottom-4 right-4 animate-bounce">
         <UButton @click="scrollToBottom">

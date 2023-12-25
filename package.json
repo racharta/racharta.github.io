@@ -20,6 +20,7 @@
   "dependencies": {
     "@formkit/auto-animate": "^0.8.1",
     "@nuxt/ui": "^2.11.1",
+    "@tailwindcss/line-clamp": "^0.4.4",
     "nuxt-icon": "^0.6.7"
   }
 }

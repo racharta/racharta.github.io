@@ -1,18 +1,26 @@
 <script setup>
 let speakers = [
   {
-    title: "",
-    image: "",
-    description: "",
-    url: "",
-    year: 2023,
+    title: "Tech Talk Webinar - Learn Kubernetes & Cloud Run",
+    image: "/images/speakers/gdgc_learn Kubernetes & Cloud Run.png",
+    description: `As one of the speakers to share her journey in learning IT at the Sharing Session at the Tech Talk Webinar - Learn Kubernetes & Cloud Run event organized by Google Developer Groups with other speakers Xin Ying Lim (GDG Brunei, Software Developer at Encore Sendirian Berhad) and Farhan Naufal Ghani - DevOps GITS Indonesia & Google Cloud certified Associate Cloud Engineer (ACE).
+Youtube: https://www.youtube.com/watch?v=bVsF02PlbBU`,
+    url: "https://gdg.community.dev/events/details/google-gdg-cloud-bandung-presents-tech-talk-webinar-learn-kubernetes-cloud-run/",
+    year: 2020,
   },
   {
-    title: "",
-    image: "",
-    description: "",
-    url: "",
-    year: 2023,
+    title: "The Spirit of Youth from a Mother",
+    image: "/images/speakers/semangat_anak_muda_dari_seorang_ibu.jpeg",
+    description: "As one of the Speakers \"The Spirit of Youth from a Mother\" at the WTM Surabaya Celebrate ID Mother's Day event on Dec 22, 2021, 12:00 - 1:00 PM GMT+7 organized by WomenTech Maker and Google Developer Groups of Surabaya (GDG Surabaya) with another speaker Mrs. Heni Prasetyorini.",
+    url: "https://gdg.community.dev/events/details/google-gdg-surabaya-presents-wtm-surabaya-celebrate-id-mothers-day/",
+    year: 2021,
+  },
+  {
+    title: "The Reason You Should Upgrade Skills In Google Cloud Technology",
+    image: "/images/speakers/wtm_speakers.jpeg",
+    description: "As a Speaker presenting the topic \"The Reason You Should Upgrade Skills In Google Cloud Technology\" at the Global Womentech Network event in 2021 organized by the WomenTech Network community",
+    url: "https://www.womentech.net/speaker/Rachmawati%20Ari%20/Taurisia/57617",
+    year: 2021,
   }
 ];
 
@@ -36,21 +44,20 @@ function scrollToBottom() {
     <Typing :texts="['My Speaking Journey']" :deleting-text="false" class="text-xl lg:text-3xl" />
   </UContainer>
   <UContainer>
-    <UDivider label="2023" class="mt-6 text-lg lg:text-2xl" data-aos="fade-left"/>
+    <!-- <UDivider label="2023" class="mt-6 text-lg lg:text-2xl" data-aos="fade-left"/> -->
     <div class="grid grid-cols-3 gap-x-6 py-6 min-w-fit overflow-x-auto">
-      <UCard data-aos="fade-up" class="min-w-[300px]" v-for="speaker in speakers" :key="speaker.title">
+      <UCard data-aos="fade-up" class="min-w-[300px] max-h-[550px] " v-for="speaker in speakers" :key="speaker.title">
         <template #header>
-          <img :src="speaker.image" :alt="speaker.title" class="rounded-t-lg">
+          <img :src="speaker.image" :alt="speaker.title" class="rounded-t-lg w-full h-[250px] object-cover">
+          <h3 class="text-xl font-semibold mt-3 line-clamp-2">{{ speaker.title }}</h3>
         </template>
-        <p>{{ speaker.description }}</p>
+        <p class="text-sm line-clamp-3">{{ speaker.description }}</p>
 
-        <template #footer>
-          <UButton>
+          <UButton class="mt-3">
             <ULink :to="speaker.url" target="_blank">
               Read More
             </ULink>
           </UButton>
-        </template>
       </UCard>
     </div>
   </UContainer>

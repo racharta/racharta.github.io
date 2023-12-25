@@ -37,7 +37,22 @@ Create database
 Programming Language : MS-Visual Foxpro 5.0`,
         skills: ['MYSQL', 'Visual Foxpro 5.0'],
     }
-]
+];
+
+let iconFloat = "mdi:chevron-double-down";
+function scrollToBottom() {
+    if (typeof window === 'undefined') {
+        return;
+    }
+
+    // Scroll to the bottom of the page
+    window.scrollTo({
+        top: window.scrollY + 500,
+        behavior: 'smooth',
+    });
+    const maxScroll = document.documentElement.scrollHeight - window.innerHeight;
+    console.log(window.scrollY, maxScroll, window.innerHeight, document.documentElement.scrollHeight);
+}
 </script>
 <template>
     <UContainer class="py-12" data-aos="fade-up">
@@ -46,4 +61,10 @@ Programming Language : MS-Visual Foxpro 5.0`,
     <UContainer class="flex flex-col gap-6">
         <ProjectCard v-for="project in projects" :key="project.name" :project="project" data-aos="fade-up"/>
     </UContainer>
+    <!-- floating button -->
+    <div class="fixed bottom-4 right-4 animate-bounce">
+        <UButton @click="scrollToBottom">
+            <Icon :name="iconFloat" size="50" />
+        </UButton>
+    </div>
 </template>

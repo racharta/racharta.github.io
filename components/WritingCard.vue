@@ -14,12 +14,10 @@ function getIcon(name: String) {
             </template>
             <p>{{ excerpt }}</p>
 
-            <template #footer>
-                <UButton>
+                <UButton class="mt-3">
                     <ULink :to="url" target="_blank">
                         Read More
                     </ULink>
                 </UButton>
-            </template>
         </UCard>
 </template>
