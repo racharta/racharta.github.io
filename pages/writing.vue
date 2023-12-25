@@ -1,8 +1,4 @@
 <script setup lang="ts">
-function getIcon(name: string) {
-    return `mdi:${name}`
-}
-
 let articles = [
     {
         title: "Navigating the Data Landscape",
@@ -58,25 +54,9 @@ function scrollToBottom() {
         <Typing
             :texts="['I Write in Medium', 'I write in LinkedIn', 'I write in Eudeka blog', 'I write in SMKDEV blog']"
             :delete-delay="1500" class="text-xl lg:text-3xl" />
-        <!-- <hr class="mt-2"> -->
     </UContainer>
     <UContainer class="flex flex-col gap-6">
-        <UCard v-for="article in articles" :key="article.title" data-aos="fade-up" data-aos-offset="10" clas="py-0">
-            <template #header>
-                <h2 class="text-2xl lg:text-4xl">{{ article.title }}</h2>
-                <h3 class="text-lg lg:text-2xl text-gray-700 dark:text-gray-300">{{ article.subtitle }}</h3>
-                <div class="flex items-center gap-1 mt-2"><Icon :name="getIcon(article.from)" size="25"/> - <span class="text-lg">{{ article.date }}</span></div>
-            </template>
-            <p>{{ article.excerpt }}</p>
-
-            <template #footer>
-                <UButton>
-                    <ULink :to="article.url" target="_blank">
-                        Read More
-                    </ULink>
-                </UButton>
-            </template>
-        </UCard>
+        <WritingCard v-for="article in articles" :key="article.title" :article="article" data-aos="fade-up" data-aos-offset="10" class="py-0"/>
     </UContainer>
 
     <!-- floating button -->

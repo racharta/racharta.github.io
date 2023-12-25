@@ -13,7 +13,6 @@ watch(
     () => {
         nav.value.classList.remove('nav-active');
         hamburger.value.classList.remove('hamburger-active');
-        console.log('route changed');
 });
 </script>
 <template>
