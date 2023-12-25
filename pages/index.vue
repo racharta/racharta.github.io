@@ -1,6 +1,21 @@
-<script setup>
-let email = ref('');
+<script setup lang="ts">
+const { database, ID } = useAppwrite()
 
+let email = ref('');
+const DATABASE_ID = '6589769b66e7050f6b32'
+const COLLECTION_ID = 'subscribers'
+// const DOCUMENT_ID = '6589771748acdf3b462b'
+
+const subscribe = async () => {
+    database.createDocument(DATABASE_ID, COLLECTION_ID, ID.unique(), {
+        email: email.value
+    }).then(() => {
+        email.value = '';
+        alert('Thank you for subscribing!')
+    }).catch((error) => {
+        console.log(error)
+    });
+}
 </script>
 <template>
     <UContainer class="py-3 md:py-16 flex flex-wrap gap-6 items-center w-full lg:h-[75vh]">
@@ -20,7 +35,7 @@ let email = ref('');
 
                 <UFormGroup label="Get the newsletter" class="py-2 lg:py-12 animate-fade-in-left">
                     <UInput class="w-56" placeholder="Enter your email" v-model="email"/>
-                    <UButton class="mt-2 text-xs text-center w-fit">subscribe</UButton>
+                    <UButton class="mt-2 text-xs text-center w-fit" @click="subscribe">subscribe</UButton>
                 </UFormGroup>
         </div>
     </UContainer>

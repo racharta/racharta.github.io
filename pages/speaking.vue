@@ -21,9 +21,23 @@ Youtube: https://www.youtube.com/watch?v=bVsF02PlbBU`,
     description: "As a Speaker presenting the topic \"The Reason You Should Upgrade Skills In Google Cloud Technology\" at the Global Womentech Network event in 2021 organized by the WomenTech Network community",
     url: "https://www.womentech.net/speaker/Rachmawati%20Ari%20/Taurisia/57617",
     year: 2021,
-  }
+  },
+  {
+    title: "Demo and Practice using Google Cloud Platform",
+    image: "/images/speakers/intro_to_gcp.jpeg",
+    description: "As a Speaker presented the topic \"Demo and Practice using Google Cloud Platform\" at the Studium Generale of the Kampus Merdeka x GITS Indonesia Batch 1 program event in 2021 organized by Eudeka.id",
+    url: "",
+    year: 2021,
+  },
+  {
+    title: "",
+    image: "/images/speakers/verzeo_gcp_2021.jpeg",
+    description: "As the Speaker presented the topic \"Are you Ready to Upgrade Skills in Google Cloud Technology?\" at Verzeo's webinar on May 22, 2021 organized by Verzeo, India's EdTech Platform.",
+    url: "",
+    year: 2021,
+  },
 ];
-
+// As a Speaker presented the topic "Are you Ready to Upgrade Skills in Google Cloud Technology?" at the Studium Generale event on May 22, 2021 organized by Verzeo, India's EdTech Platform.
 let iconFloat = "mdi:chevron-double-down";
 function scrollToBottom() {
     if (typeof window === 'undefined') {
@@ -45,7 +59,7 @@ function scrollToBottom() {
   </UContainer>
   <UContainer>
     <!-- <UDivider label="2023" class="mt-6 text-lg lg:text-2xl" data-aos="fade-left"/> -->
-    <div class="grid grid-cols-3 gap-x-6 py-6 min-w-fit overflow-x-auto">
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 py-6 min-w-fit overflow-x-auto overflow-y-hidden">
       <UCard data-aos="fade-up" class="min-w-[300px] max-h-[550px] " v-for="speaker in speakers" :key="speaker.title">
         <template #header>
           <img :src="speaker.image" :alt="speaker.title" class="rounded-t-lg w-full h-[250px] object-cover">

@@ -1,9 +1,3 @@
-<template>
-    <NavBar />
-    <slot />
-    <Footer />
-</template>
-
 <script setup>
 useHead({
     title: 'Rachmawati Ari Taurisia',
@@ -28,3 +22,8 @@ useHead({
     ]
 })
 </script>
+<template>
+    <NavBar />
+    <slot />
+    <Footer />
+</template>
