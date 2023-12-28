@@ -33,9 +33,9 @@ const subscribe = async () => {
                     I craft engaging curriculum, offer mentorship, and provide comprehensive training in Data/AI/ML using Python and GCP.
                 </p>
 
-                <UFormGroup label="Get the newsletter" class="py-2 lg:py-12 animate-fade-in-left">
+                <UFormGroup label="Get the free ebook" class="py-2 lg:py-12 animate-fade-in-left">
                     <UInput class="w-56" placeholder="Enter your email" v-model="email"/>
-                    <UButton class="mt-2 text-xs text-center w-fit" @click="subscribe">subscribe</UButton>
+                    <UButton class="mt-2 text-xs text-center w-fit" @click="subscribe">submit</UButton>
                 </UFormGroup>
         </div>
     </UContainer>
