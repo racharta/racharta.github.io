@@ -22,9 +22,10 @@ const subscribe = async () => {
         <Profile class="" data-aos="fade-right"/>
         <div class="w-full lg:w-2/3 flex flex-col items-center md:items-start gap-2 ">
             <Typing 
-                :texts="['👋 Hi, I\'m Rachmawati Ari Taurisia.', 'I\'m A Curriculum Developer']"
+                :texts="['Hi, I\'m Rachmawati Ari Taurisia.', 'I\'m A Curriculum Developer']"
                 :typing-speed="70"
-                :deleting-speed="10"
+                :deleting-speed="50"
+                :delete-delay="1000"
                 class="text-xl lg:text-2xl min-w-60 lg:!text-start font-semibold"
                 data-aos="fade-left"/>
 
